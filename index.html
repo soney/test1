@@ -317,7 +317,7 @@ define("vscode-web-browser-main", ["require", "exports", "vs/workbench/workbench
         const scheme = window.location.protocol === 'https:' ? 'https' : 'http';
         const authority = window.location.host;
         const baseURL = `${scheme}://${authority}`;
-        const config = JSON.parse(configElementAttribute.replaceAll("${scheme}", scheme).replaceAll("${authority}", authority).replaceAll("${baseURL}", baseURL));
+        const config = JSON.parse(configElementAttribute);
         console.log(config);
         (0, workbench_api_1.create)(window.document.body, {
             ...config,
